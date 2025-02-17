@@ -51,10 +51,10 @@ end
 
 group :rubocop do
   gem "rubocop", ">= 1.25.1", require: false
-  gem "rubocop-minitest", require: false
+  gem "rubocop-minitest", ">= 0.37.1", require: false
   gem "rubocop-packaging", require: false
-  gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
+  gem "rubocop-performance", ">= 1.24.0", require: false
+  gem "rubocop-rails", ">= 2.30.0", require: false
   gem "rubocop-md", require: false
 
   # This gem is used in Railties tests so it must be a development dependency.
@@ -91,9 +91,9 @@ gem "web-console", require: false
 # Action Pack and railties
 rack_version = ENV.fetch("RACK", "~> 3.0")
 if rack_version != "head"
-  gem "rack", rack_version
+  gem "rack", ">= 3.0.12", rack_version
 else
-  gem "rack", git: "https://github.com/rack/rack.git", branch: "main"
+  gem "rack", ">= 3.0.12", git: "https://github.com/rack/rack.git", branch: "main"
 end
 
 gem "kredis", ">= 1.7.0", require: false
