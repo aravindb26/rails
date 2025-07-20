@@ -13,7 +13,7 @@ end
 gem "rake", ">= 13"
 
 gem "sprockets-rails", ">= 2.0.0"
-gem "propshaft", ">= 0.1.7"
+gem "propshaft", ">= 1.2.0"
 gem "capybara", ">= 3.39"
 if RUBY_VERSION < "3"
   gem "selenium-webdriver", "<= 4.9.0"
