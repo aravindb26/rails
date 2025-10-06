@@ -50,15 +50,15 @@ group :lint do
 end
 
 group :rubocop do
-  gem "rubocop", ">= 1.25.1", require: false
-  gem "rubocop-minitest", require: false
-  gem "rubocop-packaging", require: false
-  gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-md", require: false
+  gem "rubocop", ">= 1.66.0", require: false
+  gem "rubocop-minitest", ">= 0.30.0", require: false
+  gem "rubocop-packaging", ">= 0.6.0", require: false
+  gem "rubocop-performance", ">= 1.17.0", require: false
+  gem "rubocop-rails", ">= 2.19.0", require: false
+  gem "rubocop-md", ">= 1.2.1", require: false
 
   # This gem is used in Railties tests so it must be a development dependency.
-  gem "rubocop-rails-omakase", require: false
+  gem "rubocop-rails-omakase", ">= 1.1.0", require: false
 end
 
 group :mdl do
@@ -126,7 +126,7 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.11", require: false
+  gem "google-cloud-storage", "~> 1.45", ">= 1.45.0", require: false
   gem "azure-storage-blob", "~> 2.0", require: false
 
   gem "image_processing", "~> 1.2"
