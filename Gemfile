@@ -12,9 +12,9 @@ end
 # We need a newish Rake since Active Job sets its test tasks' descriptions.
 gem "rake", ">= 13"
 
-gem "sprockets-rails", ">= 2.0.0"
-gem "propshaft", ">= 0.1.7"
-gem "capybara", ">= 3.39"
+gem "sprockets-rails", ">= 3.5.0"
+gem "propshaft", ">= 0.7.0"
+gem "capybara", ">= 3.40.0"
 if RUBY_VERSION < "3"
   gem "selenium-webdriver", "<= 4.9.0"
   gem "webdrivers"
@@ -22,14 +22,14 @@ else
   gem "selenium-webdriver", ">= 4.11.0"
 end
 
-gem "rack-cache", "~> 1.2"
-gem "stimulus-rails"
-gem "turbo-rails"
-gem "jsbundling-rails"
-gem "cssbundling-rails"
-gem "importmap-rails", ">= 1.2.3"
-gem "tailwindcss-rails"
-gem "dartsass-rails"
+gem "rack-cache", "~> 1.15", ">= 1.15.0"
+gem "stimulus-rails", ">= 1.2.2"
+gem "turbo-rails", ">= 1.3.3"
+gem "jsbundling-rails", ">= 1.1.2"
+gem "cssbundling-rails", ">= 1.2.0"
+gem "importmap-rails", ">= 2.0.0"
+gem "tailwindcss-rails", ">= 2.0.21"
+gem "dartsass-rails", ">= 0.5.0"
 # require: false so bcrypt is loaded only when has_secure_password is used.
 # This is to avoid Active Model (and by extension the entire framework)
 # being dependent on a binary library.
@@ -54,11 +54,11 @@ group :rubocop do
   gem "rubocop-minitest", require: false
   gem "rubocop-packaging", require: false
   gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
+  gem "rubocop-rails", ">= 2.19.0", require: false
   gem "rubocop-md", require: false
 
   # This gem is used in Railties tests so it must be a development dependency.
-  gem "rubocop-rails-omakase", require: false
+  gem "rubocop-rails-omakase", ">= 1.1.0", require: false
 end
 
 group :mdl do
@@ -86,14 +86,14 @@ gem "msgpack", ">= 1.7.0", require: false
 gem "bootsnap", ">= 1.4.4", require: false
 gem "webrick", require: false
 gem "jbuilder", require: false
-gem "web-console", require: false
+gem "web-console", ">= 4.2.1", require: false
 
 # Action Pack and railties
 rack_version = ENV.fetch("RACK", "~> 3.0")
 if rack_version != "head"
-  gem "rack", rack_version
+  gem "rack", ">= 3.1.18", rack_version
 else
-  gem "rack", git: "https://github.com/rack/rack.git", branch: "main"
+  gem "rack", ">= 3.1.18", git: "https://github.com/rack/rack.git", branch: "main"
 end
 
 gem "kredis", ">= 1.7.0", require: false
@@ -101,9 +101,9 @@ gem "useragent", require: false
 
 # Active Job
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "resque", ">= 2.5.0", require: false
+  gem "resque-scheduler", ">= 4.8.0", require: false
+  gem "sidekiq", ">= 7.0.4", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", ">= 4.0.0", require: false, platforms: :ruby
